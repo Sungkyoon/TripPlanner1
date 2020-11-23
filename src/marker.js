@@ -8,12 +8,12 @@ export const iconURLS = {
 
 const buildMarker = (activity, latLong) => {
   if (!iconURLS.hasOwnProperty(activity)){
-    activity = activities
+    activity = 'activities'
   }
   const markerDom = document.createElement('div')
 markerDom.style.width = "32px";
 markerDom.style.height = "39px";
-markerDom.style.backgroundImage = url(`${iconURLS[activity]`)
+markerDom.style.backgroundImage = `url(${iconURLS[activity]})`
 
 return new mapboxgl.Marker(markerDom).setLngLat(latLong)
 }
